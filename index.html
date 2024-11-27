@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema para Vencer el Miedo al Fracaso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #00344B;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 5px;
+            color: #1565c0;
+            font-weight: bold;
+        }
+        .cta-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta-container p {
+            color: #00344B;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta-container a {
+            display: inline-block;
+            background-color: #00DC42;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta-container a:hover {
+            background-color: #00c03a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema para Vencer el Miedo al Fracaso y Generar Ganancias</h1>
+        <p>Completa este ejercicio interactivo para transformar tus miedos en acción y crear un plan claro hacia tus objetivos.</p>
+
+        <form id="fear-form">
+            <label for="fear">Describe tu mayor miedo relacionado con tus metas:</label>
+            <textarea id="fear" placeholder="Ejemplo: No tener suficientes clientes para mi negocio"></textarea>
+
+            <label for="consequence">¿Qué podría pasar si este miedo se hace realidad?</label>
+            <textarea id="consequence" placeholder="Ejemplo: Perdería tiempo y dinero"></textarea>
+
+            <label for="solution">Escribe una posible acción para evitar o manejar este escenario:</label>
+            <textarea id="solution" placeholder="Ejemplo: Crear un plan de contingencia o buscar más clientes a través de publicidad"></textarea>
+
+            <button type="button" onclick="generateActionPlan()">Generar Plan de Acción</button>
+        </form>
+
+        <div id="result" class="result" style="display: none;"></div>
+
+        <div class="cta-container">
+            <p>REVOLUCIONA TU NEGOCIO CON EL PODER DEL CHAT INTELIGENTE</p>
+            <a href="https://klicana.work/tdivKK" target="_blank">SÍ, QUIERO INSCRIBIRME AHORA EN LUCRACHAT IA</a>
+        </div>
+    </div>
+
+    <script>
+        function generateActionPlan() {
+            const fear = document.getElementById("fear").value.trim();
+            const consequence = document.getElementById("consequence").value.trim();
+            const solution = document.getElementById("solution").value.trim();
+
+            if (!fear || !consequence || !solution) {
+                document.getElementById("result").style.display = "block";
+                document.getElementById("result").textContent = "Por favor, completa todos los campos para generar tu plan de acción.";
+                return;
+            }
+
+            const advice = `
+                <strong>Tu Plan de Acción:</strong><br>
+                1. Reconoce que el miedo a "${fear}" es una señal de que te importa tu objetivo.<br>
+                2. Si ocurre "${consequence}", estarás preparado porque has considerado "${solution}".<br>
+                3. Toma un primer paso pequeño hoy, como buscar recursos o apoyo para alcanzar tu meta.<br>
+                Recuerda: el fracaso no es el final, sino un aprendizaje hacia el éxito.
+            `;
+
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerHTML = advice;
+        }
+    </script>
+</body>
+</html>
